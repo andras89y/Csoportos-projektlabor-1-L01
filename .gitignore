@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated program outputs
+01_Program/Lyukkitoltes_Eredmenyek/
