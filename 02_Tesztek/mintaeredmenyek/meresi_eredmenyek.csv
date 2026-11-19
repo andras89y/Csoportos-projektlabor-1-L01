@@ -1,0 +1,9 @@
+﻿Modell;Algoritmus;Eredeti_haromszogek;Serult_haromszogek;Potolt_haromszogek;Maradek_lyukak;Nyitott_elek;RMSE_hiba;Hausdorff_hiba;Futasi_ido_ms
+1. Modell: 3D Hullamos Torusz;1. Centroid Fan;6400;5974;126;0;0;0.09638;0.15949;14.68
+1. Modell: 3D Hullamos Torusz;2. Ear Clipping;6400;5974;118;0;0;0.07080;0.19400;52.73
+1. Modell: 3D Hullamos Torusz;3. Multi-Ring Laplacian;6400;5974;630;0;0;0.09804;0.22726;125.55
+1. Modell: 3D Hullamos Torusz;4. Multi-Ring Biharmonic TPS;6400;5974;630;0;0;0.06400;0.12389;85.75
+2. Modell: 3D Deformalt Gomb;1. Centroid Fan;6160;5741;127;0;0;0.08040;0.13736;16.45
+2. Modell: 3D Deformalt Gomb;2. Ear Clipping;6160;5741;119;0;0;0.06595;0.11728;60.68
+2. Modell: 3D Deformalt Gomb;3. Multi-Ring Laplacian;6160;5741;635;0;0;0.07766;0.15606;70.79
+2. Modell: 3D Deformalt Gomb;4. Multi-Ring Biharmonic TPS;6160;5741;635;0;0;0.06034;0.10619;188.89

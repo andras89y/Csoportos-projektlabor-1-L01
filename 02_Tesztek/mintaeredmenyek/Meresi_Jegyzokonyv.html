@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Mérési Jegyzőkönyv - 3D Lyukkitöltés</title>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f6f9; color: #1e293b; margin: 0; padding: 28px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .header { background: #1e3a8a; color: white; padding: 24px 28px; border-radius: 10px; margin-bottom: 24px; }
+    .header h1 { margin: 0 0 8px 0; font-size: 24px; }
+    .header p { margin: 4px 0; opacity: 0.9; font-size: 14px; }
+    .card { background: white; border-radius: 10px; padding: 24px; margin-bottom: 26px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    h2 { margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; }
+    .meta { background: #f8fafc; padding: 10px 14px; border-left: 4px solid #3b82f6; border-radius: 4px; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: center; }
+    th { background: #f1f5f9; color: #0f172a; }
+    td:first-child { text-align: left; }
+    .img-box { text-align: center; margin-top: 18px; }
+    .img-box img { max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px; }
+    .summary { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 20px 24px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Mérési Jegyzőkönyv – 3D Háromszögháló Lyukkitöltő Algoritmusok Vizsgálata</h1>
+        <p><strong>Csoportos Projektlabor</strong> | Automatikus kiértékelés 2 különböző 3D tesztgeometrián</p>
+        <p>Generálás dátuma: 2026-11-19 16:50:34</p>
+    </div>
+    
+        <div class="card">
+            <h2>1. Modell: 3D Hullamos Torusz</h2>
+            <p class="meta">
+                <strong>Eredeti háromszögek:</strong> 6400 db &nbsp;|&nbsp;
+                <strong>Sérült háromszögek:</strong> 5974 db (Hiányzó: 426 db) &nbsp;|&nbsp;
+                <strong>Detektált lyukak:</strong> 4 db (126 nyitott peremél)
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Algoritmus</th>
+                        <th>Pótolt háromszögek</th>
+                        <th>Maradék lyukak</th>
+                        <th>Nyitott élek</th>
+                        <th>RMSE hiba</th>
+                        <th>Hausdorff hiba</th>
+                        <th>Futási idő</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>1. Centroid Fan</td>
+                <td>126 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.09638</td>
+                <td>0.15949</td>
+                <td>14.7 ms</td>
+            </tr>
+            <tr>
+                <td>2. Ear Clipping</td>
+                <td>118 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.07080</td>
+                <td>0.19400</td>
+                <td>52.7 ms</td>
+            </tr>
+            <tr>
+                <td>3. Multi-Ring Laplacian</td>
+                <td>630 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.09804</td>
+                <td>0.22726</td>
+                <td>125.6 ms</td>
+            </tr>
+            <tr style="background-color:#e8f5e9; font-weight:bold;">
+                <td>4. Multi-Ring Biharmonic TPS <span style="background:#2e7d32;color:#fff;padding:2px 6px;border-radius:4px;font-size:11px;">Legpontosabb</span></td>
+                <td>630 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.06400</td>
+                <td>0.12389</td>
+                <td>85.7 ms</td>
+            </tr>
+                </tbody>
+            </table>
+            <div class="img-box">
+                <img src="1_modell_torusz_3d.png" alt="1. Modell: 3D Hullamos Torusz">
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>2. Modell: 3D Deformalt Gomb</h2>
+            <p class="meta">
+                <strong>Eredeti háromszögek:</strong> 6160 db &nbsp;|&nbsp;
+                <strong>Sérült háromszögek:</strong> 5741 db (Hiányzó: 419 db) &nbsp;|&nbsp;
+                <strong>Detektált lyukak:</strong> 4 db (127 nyitott peremél)
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Algoritmus</th>
+                        <th>Pótolt háromszögek</th>
+                        <th>Maradék lyukak</th>
+                        <th>Nyitott élek</th>
+                        <th>RMSE hiba</th>
+                        <th>Hausdorff hiba</th>
+                        <th>Futási idő</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr>
+                <td>1. Centroid Fan</td>
+                <td>127 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.08040</td>
+                <td>0.13736</td>
+                <td>16.5 ms</td>
+            </tr>
+            <tr>
+                <td>2. Ear Clipping</td>
+                <td>119 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.06595</td>
+                <td>0.11728</td>
+                <td>60.7 ms</td>
+            </tr>
+            <tr>
+                <td>3. Multi-Ring Laplacian</td>
+                <td>635 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.07766</td>
+                <td>0.15606</td>
+                <td>70.8 ms</td>
+            </tr>
+            <tr style="background-color:#e8f5e9; font-weight:bold;">
+                <td>4. Multi-Ring Biharmonic TPS <span style="background:#2e7d32;color:#fff;padding:2px 6px;border-radius:4px;font-size:11px;">Legpontosabb</span></td>
+                <td>635 db</td>
+                <td>0 db</td>
+                <td>0 db</td>
+                <td>0.06034</td>
+                <td>0.10619</td>
+                <td>188.9 ms</td>
+            </tr>
+                </tbody>
+            </table>
+            <div class="img-box">
+                <img src="2_modell_gomb_3d.png" alt="2. Modell: 3D Deformalt Gomb">
+            </div>
+        </div>
+        
+    <div class="summary">
+        <h2>Mérnöki következtetések és kiértékelés</h2>
+        <ul>
+            <li><strong>Topológiai peremzárás a két tesztmodellen:</strong> a négy algoritmus mindkét beépített 3D modellen <strong>0-ra csökkentette a nyitott peremélek számát</strong>. Ez nem önmagában bizonyíték általános vízzáróságra.</li>
+            <li><strong>Sebesség vs. Pontosság:</strong> A <em>Centroid Fan</em> és az <em>Ear Clipping</em> rendkívül gyors, de a görbült felületeken nagyobb geometriai hibát hagynak.</li>
+            <li><strong>Távolságmutatók:</strong> a <em>Multi-Ring Biharmonic TPS</em> adta a legkisebb program szerinti RMSE- és maximumtávolság-értéket a két beépített teszten. A mutatók a pótolt és eredeti háromszögek súlypontjaira számított egyirányú legközelebbi-szomszéd távolságok, nem a teljes felületek szabványos Hausdorff-távolsága.</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
