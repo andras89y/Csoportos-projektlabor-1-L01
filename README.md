@@ -43,7 +43,7 @@ MPLBACKEND=Agg .venv/bin/python 01_Program/main.py
 .venv/bin/python -m unittest discover -s 02_Tesztek -v
 ```
 
-**Ellenőrzött környezet:** Linux, Python 3.13.5, NumPy 2.3.5, Matplotlib 3.10.8. A Windows-futtatás éles ellenőrzését a GitHub Actions workflow is megpróbálja elvégezni; csak a sikeres futás után tekinthető ott is ellenőrzöttnek.
+**Ellenőrzött helyi környezet:** Linux, Python 3.13.5, NumPy 2.3.5, Matplotlib 3.10.8. A [GitHub Actions](https://github.com/andras89y/Csoportos-projektlabor-1-L01/actions/workflows/verify.yml) minden `main` ágra történő feltöltéskor és pull requestnél elindítja a négy tesztet **Windows és Ubuntu rendszeren, Python 3.13-mal**. Az [első GitHub-futtatás](https://github.com/andras89y/Csoportos-projektlabor-1-L01/actions/runs/44585443717) mindkét platformon sikeres volt. A CI grafikus felület nélküli teszt, nem interaktív Windows-bemutató.
 
 ## Kimenetek
 
